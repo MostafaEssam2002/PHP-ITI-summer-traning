@@ -1,0 +1,434 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script src="script.js">
+</script>
+</html> -->
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<!-- task 2 -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Sum Until Stop</title>
+</head>
+<body>
+<script>
+    let sum = 0;
+
+    while (true) {
+    let input = prompt("Enter a number (0 to stop):");
+    if (input === null) {
+        alert("Input cancelled. Total sum: " + sum);
+        break;
+    }
+    let value = Number(input);
+    if (isNaN(value)) {
+        alert("Invalid input! Please enter a numeric value.");
+        continue;
+    }
+    if (value === 0) {
+        alert("You entered 0. Total sum: " + sum);
+        break;
+    }
+    sum += value;
+    if (sum > 100) {
+        alert("Sum exceeded 100! Final sum: " + sum);
+        break;
+    }
+    }
+</script>
+</body>
+</html> -->
+<!-- +++++++++++++++++++++++++++++++++++++++++++ -->
+<!-- task 3 -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Fizz Buzz</title>
+</head>
+<body>
+<h2>Fizz Buzz Checker</h2>
+
+<label>Number: </label>
+<input type="number" id="num">
+<button onclick="checkNumber()">Check</button>
+
+<p id="result"></p>
+
+<script>
+function checkNumber() {
+let num = document.getElementById("num").value;
+num = Number(num);
+
+let output = "";
+
+if (num % 3 === 0 && num % 5 === 0) {
+    output = "fizz buzz";
+} else if (num % 3 === 0) {
+    output = "fizz";
+} else if (num % 5 === 0) {
+    output = "buzz";
+} else {
+    output = num; 
+}
+
+document.getElementById("result").innerText = "Output: " + output;
+}
+</script>
+</body>
+</html> -->
+<!-- ++++++++++++++++++++++++++++++++++++++ -->
+<!-- task 4 -->
+ <!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Who Am I? Game</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background: linear-gradient(135deg, #74b9ff, #0984e3);
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .game-container {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 600px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            animation: fadeIn 0.5s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        h1 {
+            color: #2d3436;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .question {
+            background: #74b9ff;
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            font-size: 1.5em;
+            margin: 20px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin: 30px 0;
+        }
+        
+        button {
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+        
+        .yes-btn {
+            background: #00b894;
+            color: white;
+        }
+        
+        .no-btn {
+            background: #e17055;
+            color: white;
+        }
+        
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .result {
+            background: #fdcb6e;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 20px 0;
+            animation: bounce 0.6s ease-in;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+        
+        .animal-icon {
+            font-size: 4em;
+            margin: 20px 0;
+        }
+        
+        .restart-btn {
+            background: #6c5ce7;
+            color: white;
+            margin-top: 20px;
+        }
+        
+        .intro {
+            font-size: 1.2em;
+            color: #636e72;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <h1>🎯 Who Am I? Game</h1>
+        <div id="gameContent">
+            <div class="intro">
+                Think of an animal and I'll try to guess it!<br>
+                Answer the questions with Yes or No.
+            </div>
+            <button class="restart-btn" onclick="startGame()">Start Game</button>
+        </div>
+    </div>
+
+    <script>
+        let currentStep = 'start';
+        
+        const gameTree = {
+            start: {
+                question: "Do you fly?",
+                yes: 'flies',
+                no: 'noFly'
+            },
+            flies: {
+                question: "Are you wild?",
+                yes: 'wildFlyer',
+                no: 'domesticFlyer'
+            },
+            wildFlyer: {
+                result: "Eagle",
+                icon: "🦅",
+                description: "You are a majestic Eagle! King of the skies!"
+            },
+            domesticFlyer: {
+                result: "Parrot",
+                icon: "🦜",
+                description: "You are a colorful Parrot! Pretty bird!"
+            },
+            noFly: {
+                question: "Do you live undersea?",
+                yes: 'undersea',
+                no: 'land'
+            },
+            undersea: {
+                question: "Are you wild?",
+                yes: 'wildSea',
+                no: 'domesticSea'
+            },
+            wildSea: {
+                result: "Shark",
+                icon: "🦈",
+                description: "You are a powerful Shark! Ruler of the ocean!"
+            },
+            domesticSea: {
+                result: "Dolphin",
+                icon: "🐬",
+                description: "You are a friendly Dolphin! So smart and playful!"
+            },
+            land: {
+                question: "Are you wild?",
+                yes: 'wildLand',
+                no: 'domesticLand'
+            },
+            wildLand: {
+                result: "Lion",
+                icon: "🦁",
+                description: "You are a brave Lion! King of the jungle!"
+            },
+            domesticLand: {
+                result: "Cat",
+                icon: "🐱",
+                description: "You are a cute Cat! Meow!"
+            }
+        };
+
+        function startGame() {
+            currentStep = 'start';
+            showQuestion();
+        }
+
+        function showQuestion() {
+            const step = gameTree[currentStep];
+            const content = document.getElementById('gameContent');
+            
+            if (step.result) {
+                // Show result
+                content.innerHTML = `
+                    <div class="result">
+                        <div class="animal-icon">${step.icon}</div>
+                        <h2>${step.result}!</h2>
+                        <p>${step.description}</p>
+                        <button class="restart-btn" onclick="startGame()">Play Again</button>
+                    </div>
+                `;
+            } else {
+                // Show question
+                content.innerHTML = `
+                    <div class="question">${step.question}</div>
+                    <div class="buttons">
+                        <button class="yes-btn" onclick="answerQuestion('yes')">Yes</button>
+                        <button class="no-btn" onclick="answerQuestion('no')">No</button>
+                    </div>
+                `;
+            }
+        }
+
+        function answerQuestion(answer) {
+            const step = gameTree[currentStep];
+            currentStep = step[answer];
+            showQuestion();
+        }
+
+        // Add some fun interactions
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'y' || e.key === 'Y') {
+                const yesBtn = document.querySelector('.yes-btn');
+                if (yesBtn) yesBtn.click();
+            } else if (e.key === 'n' || e.key === 'N') {
+                const noBtn = document.querySelector('.no-btn');
+                if (noBtn) noBtn.click();
+            }
+        });
+    </script>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Info Validator</title>
+</head>
+<body>
+    <h1>User Information Entry</h1>
+    <button onclick="enterUserInfo()">Start</button>
+    <div id="result"></div>
+
+    <script>
+        function enterUserInfo() {
+            // Get user color choice
+            let colorChoice = prompt("Choose a color for display (red, green, or blue):").toLowerCase();
+            
+            // Validate color choice
+            if (colorChoice !== 'red' && colorChoice !== 'green' && colorChoice !== 'blue') {
+                alert("Please choose only red, green, or blue!");
+                return;
+            }
+            
+            // Get user information
+            let name = prompt("Enter your name:");
+            let phoneNumber = prompt("Enter your phone number:");
+            let mobileNumber = prompt("Enter your mobile number:");
+            let email = prompt("Enter your email address:");
+            
+            // Validation flags
+            let isValid = true;
+            let errorMessages = [];
+            
+            // Validate Name - should be characters, not numbers
+            if (!name || /\d/.test(name)) {
+                errorMessages.push("Name should be characters, not numbers!");
+                isValid = false;
+            }
+            
+            // Validate Phone Number - should be numbers with length = 8
+            if (!phoneNumber || !/^\d{8}$/.test(phoneNumber)) {
+                errorMessages.push("Phone Number should be numbers with length = 8!");
+                isValid = false;
+            }
+            
+            // Validate Mobile Number - should be numbers, length = 11, starts with (010|011|012)
+            if (!mobileNumber || !/^(010|011|012)\d{8}$/.test(mobileNumber) || mobileNumber.length !== 11) {
+                errorMessages.push("Mobile Number should be 11 digits and start with 010, 011, or 012!");
+                isValid = false;
+            }
+            
+            // Validate Email - should use regular expression for email format
+            let emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            if (!email || !emailRegex.test(email)) {
+                errorMessages.push("Email should be formatted correctly (e.g., abc@123.com)!");
+                isValid = false;
+            }
+            
+            // Display results
+            if (!isValid) {
+                alert("Validation Errors:\n" + errorMessages.join("\n"));
+                return;
+            }
+            
+            // Get current date information
+            let today = new Date();
+            let dayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+            let monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 
+                            'July', 'August', 'September', 'October', 'November', 'December'];
+            
+            let dayName = dayNames[today.getDay()];
+            let monthName = monthNames[today.getMonth()];
+            let monthNumber = today.getMonth() + 1;
+            let year = today.getFullYear();
+            let fullDate = today.toDateString();
+            
+            // Create welcome message
+            let welcomeMessage = `
+                <h2>Entering User Info</h2>
+                <p>Welcome dear guest ${name}</p>
+                <p>Your telephone number is ${phoneNumber}</p>
+                <p>Your mobile number is ${mobileNumber}</p>
+                <p>Your email address is ${email}</p>
+                <br>
+                <p>Today is ${dayName}</p>
+                <p>We are in month ${monthNumber}</p>
+                <p>And year ${year}</p>
+                <p>Today is ${fullDate}</p>
+            `;
+            
+            // Display with chosen color
+            let resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = welcomeMessage;
+            resultDiv.style.color = colorChoice;
+            resultDiv.style.fontFamily = 'Arial, sans-serif';
+            resultDiv.style.lineHeight = '1.6';
+            
+            // Ask if user wants to try again
+            let tryAgain = confirm("Do you want to enter information again?");
+            if (tryAgain) {
+                enterUserInfo();
+            }
+        }
+    </script>
+</body>
+</html>
