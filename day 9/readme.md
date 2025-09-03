@@ -98,8 +98,8 @@ university-database/
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/university-database.git
-   cd university-database
+   git clone https://github.com/MostafaEssam2002/PHP-ITI-summer-traning.git
+   cd PHP-ITI-summer-traning/day 9
    ```
 
 2. **Import the database**
@@ -226,3 +226,4 @@ Database Design and Implementation
 ---
 
 *Last Updated: September 2025*
+
