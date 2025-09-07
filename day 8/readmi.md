@@ -1,4 +1,4 @@
-\# Restaurant Website
+# Restaurant Website
 
 
 
@@ -6,65 +6,65 @@ A modern, responsive restaurant website with dynamic menu functionality, featuri
 
 
 
-\## 🍽️ Features
+## 🍽️ Features
 
 
 
-\### Frontend Features
+### Frontend Features
 
-\- \*\*Dynamic Image Slider\*\*: Auto-playing hero section with 4 restaurant images
+- **Dynamic Image Slider**: Auto-playing hero section with 4 restaurant images
 
-\- \*\*Responsive Navigation\*\*: Fixed navbar with smooth scrolling to sections
+- **Responsive Navigation**: Fixed navbar with smooth scrolling to sections
 
-\- \*\*Interactive Menu System\*\*: Category-based product filtering
+- **Interactive Menu System**: Category-based product filtering
 
-\- \*\*Shopping Cart\*\*: Add-to-cart functionality with real-time counter
+- **Shopping Cart**: Add-to-cart functionality with real-time counter
 
-\- \*\*Smooth Animations\*\*: Fade-in effects, hover animations, and scroll-triggered animations
+- **Smooth Animations**: Fade-in effects, hover animations, and scroll-triggered animations
 
-\- \*\*Mobile Responsive\*\*: Optimized for all device sizes
+- **Mobile Responsive**: Optimized for all device sizes
 
-\- \*\*Accessibility\*\*: Keyboard navigation support and touch/swipe gestures
-
-
-
-\### Backend Features
-
-\- \*\*MySQL Database Integration\*\*: Dynamic product and category loading
-
-\- \*\*RESTful API\*\*: PHP endpoint for retrieving products and categories
-
-\- \*\*CORS Support\*\*: Cross-origin resource sharing enabled
+- **Accessibility**: Keyboard navigation support and touch/swipe gestures
 
 
 
-\## 🛠️ Tech Stack
+### Backend Features
+
+- **MySQL Database Integration**: Dynamic product and category loading
+
+- **RESTful API**: PHP endpoint for retrieving products and categories
+
+- **CORS Support**: Cross-origin resource sharing enabled
 
 
 
-\### Frontend
-
-\- \*\*HTML5\*\*: Semantic markup structure
-
-\- \*\*CSS3\*\*: Modern styling with animations and responsive design
-
-\- \*\*JavaScript (ES6+)\*\*: Interactive functionality and API integration
-
-\- \*\*Google Fonts\*\*: Poppins and Merriweather typography
+## 🛠️ Tech Stack
 
 
 
-\### Backend
+### Frontend
 
-\- \*\*PHP\*\*: Server-side scripting
+- **HTML5**: Semantic markup structure
 
-\- \*\*MySQL\*\*: Database management
+- **CSS3**: Modern styling with animations and responsive design
 
-\- \*\*PDO\*\*: Database connectivity and prepared statements
+- **JavaScript (ES6+)**: Interactive functionality and API integration
+
+- **Google Fonts**: Poppins and Merriweather typography
 
 
 
-\## 📁 Project Structure
+### Backend
+
+- **PHP**: Server-side scripting
+
+- **MySQL**: Database management
+
+- **PDO**: Database connectivity and prepared statements
+
+
+
+## 📁 Project Structure
 
 
 
@@ -78,19 +78,19 @@ restaurant-website/
 
 ├── script.js           # JavaScript functionality
 
-├── get\_products.php    # PHP API endpoint
+├── get_products.php    # PHP API endpoint
 
 ├── images/             # Image assets folder
 
 │   ├── logo.png
 
-│   ├── slide\_1.jpg
+│   ├── slide_1.jpg
 
-│   ├── slide\_2.jpg
+│   ├── slide_2.jpg
 
-│   ├── slide\_3.jpg
+│   ├── slide_3.jpg
 
-│   └── res\_img\_5.jpg
+│   └── res_img_5.jpg
 
 └── README.md           # This file
 
@@ -98,21 +98,21 @@ restaurant-website/
 
 
 
-\## 🗄️ Database Schema
+## 🗄️ Database Schema
 
 
 
-\### Tables Required
+### Tables Required
 
 
 
-\#### `categories` Table
+#### `categories` Table
 
 ```sql
 
 CREATE TABLE categories (
 
-&nbsp;   id INT AUTO\_INCREMENT PRIMARY KEY,
+&nbsp;   id INT AUTO_INCREMENT PRIMARY KEY,
 
 &nbsp;   name VARCHAR(100) NOT NULL
 
@@ -122,13 +122,13 @@ CREATE TABLE categories (
 
 
 
-\#### `products` Table
+#### `products` Table
 
 ```sql
 
 CREATE TABLE products (
 
-&nbsp;   id INT AUTO\_INCREMENT PRIMARY KEY,
+&nbsp;   id INT AUTO_INCREMENT PRIMARY KEY,
 
 &nbsp;   name VARCHAR(200) NOT NULL,
 
@@ -136,9 +136,9 @@ CREATE TABLE products (
 
 &nbsp;   image VARCHAR(500),
 
-&nbsp;   category\_id INT,
+&nbsp;   category_id INT,
 
-&nbsp;   FOREIGN KEY (category\_id) REFERENCES categories(id)
+&nbsp;   FOREIGN KEY (category_id) REFERENCES categories(id)
 
 );
 
@@ -146,7 +146,7 @@ CREATE TABLE products (
 
 
 
-\### Sample Data
+### Sample Data
 
 ```sql
 
@@ -160,7 +160,7 @@ INSERT INTO categories (name) VALUES
 
 -- Products
 
-INSERT INTO products (name, price, image, category\_id) VALUES 
+INSERT INTO products (name, price, image, category_id) VALUES 
 
 ('Caesar Salad', 12.99, 'images/caesar-salad.jpg', 2),
 
@@ -172,27 +172,27 @@ INSERT INTO products (name, price, image, category\_id) VALUES
 
 
 
-\## 🚀 Setup Instructions
+## 🚀 Setup Instructions
 
 
 
-\### Prerequisites
+### Prerequisites
 
-\- Web server (Apache/Nginx)
+- Web server (Apache/Nginx)
 
-\- PHP 7.0 or higher
+- PHP 7.0 or higher
 
-\- MySQL 5.7 or higher
+- MySQL 5.7 or higher
 
-\- Modern web browser
-
-
-
-\### Installation Steps
+- Modern web browser
 
 
 
-1\. \*\*Clone/Download the project files\*\*
+### Installation Steps
+
+
+
+1. **Clone/Download the project files**
 
 &nbsp;  ```bash
 
@@ -204,13 +204,13 @@ INSERT INTO products (name, price, image, category\_id) VALUES
 
 
 
-2\. \*\*Database Setup\*\*
+2. **Database Setup**
 
 &nbsp;  - Create a MySQL database named `test`
 
 &nbsp;  - Import the required tables (see Database Schema section)
 
-&nbsp;  - Update database credentials in `get\_products.php` if needed:
+&nbsp;  - Update database credentials in `get_products.php` if needed:
 
 &nbsp;    ```php
 
@@ -220,7 +220,7 @@ INSERT INTO products (name, price, image, category\_id) VALUES
 
 
 
-3\. \*\*Web Server Configuration\*\*
+3. **Web Server Configuration**
 
 &nbsp;  - Place files in your web server's document root
 
@@ -230,13 +230,13 @@ INSERT INTO products (name, price, image, category\_id) VALUES
 
 &nbsp;    ```javascript
 
-&nbsp;    const response = await fetch('http://localhost/task6-9/get\_products.php')
+&nbsp;    const response = await fetch('http://localhost/task6-9/get_products.php')
 
 &nbsp;    ```
 
 
 
-4\. \*\*Image Assets\*\*
+4. **Image Assets**
 
 &nbsp;  - Add restaurant images to the `images/` folder
 
@@ -244,119 +244,119 @@ INSERT INTO products (name, price, image, category\_id) VALUES
 
 
 
-\## 🔧 Configuration
+## 🔧 Configuration
 
 
 
-\### API Endpoint
+### API Endpoint
 
-The PHP script `get\_products.php` serves as the API endpoint that:
+The PHP script `get_products.php` serves as the API endpoint that:
 
-\- Fetches all categories from the database
+- Fetches all categories from the database
 
-\- Retrieves products with their associated category names
+- Retrieves products with their associated category names
 
-\- Returns JSON response with CORS headers enabled
+- Returns JSON response with CORS headers enabled
 
 
 
-\### JavaScript Configuration
+### JavaScript Configuration
 
 Key configurable elements in `script.js`:
 
-\- Auto-slide interval (currently 5 seconds)
+- Auto-slide interval (currently 5 seconds)
 
-\- API endpoint URL
+- API endpoint URL
 
-\- Animation delays and durations
+- Animation delays and durations
 
-\- Touch/swipe sensitivity
-
-
-
-\## 🎨 Customization
+- Touch/swipe sensitivity
 
 
 
-\### Styling
-
-\- Primary colors: Gold (#d4af37) and Navy (#0f172b)
-
-\- Fonts: Merriweather (serif) and Nunito (sans-serif)
-
-\- Animations: CSS transitions and keyframe animations
+## 🎨 Customization
 
 
 
-\### Content Sections
+### Styling
 
-\- Hero slider with 4 image slots
+- Primary colors: Gold (#d4af37) and Navy (#0f172b)
 
-\- About Us section with fade-in animation
+- Fonts: Merriweather (serif) and Nunito (sans-serif)
 
-\- Dynamic menu with category filtering
-
-\- Footer with restaurant information
+- Animations: CSS transitions and keyframe animations
 
 
 
-\## 📱 Responsive Design
+### Content Sections
+
+- Hero slider with 4 image slots
+
+- About Us section with fade-in animation
+
+- Dynamic menu with category filtering
+
+- Footer with restaurant information
+
+
+
+## 📱 Responsive Design
 
 
 
 The website is fully responsive with breakpoints at:
 
-\- Desktop: 1200px+
+- Desktop: 1200px+
 
-\- Tablet: 768px - 1199px
+- Tablet: 768px - 1199px
 
-\- Mobile: 480px - 767px
+- Mobile: 480px - 767px
 
-\- Small Mobile: < 480px
-
-
-
-\## 🔍 Browser Support
+- Small Mobile: < 480px
 
 
 
-\- Chrome 60+
-
-\- Firefox 55+
-
-\- Safari 12+
-
-\- Edge 79+
+## 🔍 Browser Support
 
 
 
-\## 🚀 Performance Features
+- Chrome 60+
+
+- Firefox 55+
+
+- Safari 12+
+
+- Edge 79+
 
 
 
-\- Lazy loading for images
-
-\- CSS animations with GPU acceleration
-
-\- Efficient DOM manipulation
-
-\- Optimized image sizes and formats
+## 🚀 Performance Features
 
 
 
-\## 🔒 Security Features
+- Lazy loading for images
+
+- CSS animations with GPU acceleration
+
+- Efficient DOM manipulation
+
+- Optimized image sizes and formats
 
 
 
-\- PDO prepared statements prevent SQL injection
-
-\- CORS headers properly configured
-
-\- Input validation on frontend and backend
+## 🔒 Security Features
 
 
 
-\## 📊 API Response Format
+- PDO prepared statements prevent SQL injection
+
+- CORS headers properly configured
+
+- Input validation on frontend and backend
+
+
+
+## 📊 API Response Format
 
 
 
@@ -364,9 +364,9 @@ The website is fully responsive with breakpoints at:
 
 {
 
-&nbsp; "categories": \["All", "Appetizers", "Main Courses", "Desserts"],
+&nbsp; "categories": ["All", "Appetizers", "Main Courses", "Desserts"],
 
-&nbsp; "products": \[
+&nbsp; "products": [
 
 &nbsp;   {
 
@@ -390,41 +390,41 @@ The website is fully responsive with breakpoints at:
 
 
 
-\## 🐛 Troubleshooting
+## 🐛 Troubleshooting
 
 
 
-\### Common Issues
+### Common Issues
 
-1\. \*\*Products not loading\*\*: Check database connection and API endpoint URL
+1. **Products not loading**: Check database connection and API endpoint URL
 
-2\. \*\*Images not displaying\*\*: Verify image paths and file permissions
+2. **Images not displaying**: Verify image paths and file permissions
 
-3\. \*\*CORS errors\*\*: Ensure proper headers in PHP file
+3. **CORS errors**: Ensure proper headers in PHP file
 
-4\. \*\*Animations not working\*\*: Check CSS animation support in browser
+4. **Animations not working**: Check CSS animation support in browser
 
 
 
-\### Debug Mode
+### Debug Mode
 
 Enable console logging by uncommenting debug statements in `script.js`
 
 
 
-\## 🤝 Contributing
+## 🤝 Contributing
 
 
 
-1\. Fork the repository
+1. Fork the repository
 
-2\. Create a feature branch
+2. Create a feature branch
 
-3\. Make your changes
+3. Make your changes
 
-4\. Test thoroughly
+4. Test thoroughly
 
-5\. Submit a pull request
+5. Submit a pull request
 
 
 
