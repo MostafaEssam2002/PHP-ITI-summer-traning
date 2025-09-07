@@ -32,8 +32,6 @@ A modern, responsive restaurant website with dynamic menu functionality, featuri
 
 - **MySQL Database Integration**: Dynamic product and category loading
 
-- **RESTful API**: PHP endpoint for retrieving products and categories
-
 - **CORS Support**: Cross-origin resource sharing enabled
 
 
