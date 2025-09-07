@@ -226,11 +226,11 @@ INSERT INTO products (name, price, image, category_id) VALUES
 
 &nbsp;  - Update the API endpoint URL in `script.js` if needed:
 
-&nbsp;    ```javascript
+    ``` javascript
 
-&nbsp;    const response = await fetch('http://localhost/task6-9/get_products.php')
+    const response = await fetch('http://localhost/task6-9/get_products.php')
 
-&nbsp;    ```
+    ```
 
 
 
