@@ -192,13 +192,6 @@ After completing these tasks, you will have gained experience in:
 - **User Experience Design:** Creating smooth, responsive, and intuitive interfaces
 - **Code Organization:** Structuring larger JavaScript applications
 
-## 📚 Additional Resources
-
-- [MDN Web Docs - JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-- [MDN Web Docs - DOM Manipulation](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model)
-- [JavaScript.info](https://javascript.info/)
-- [W3Schools JavaScript Tutorial](https://www.w3schools.com/js/)
-
 ## 📝 Notes
 
 - **No External Dependencies:** All functionality implemented with vanilla JavaScript
@@ -210,3 +203,4 @@ After completing these tasks, you will have gained experience in:
 
 **Developed during ITI PHP Summer Internship - Day 7**  
 *Focus: Advanced JavaScript DOM Manipulation & Interactive Components*
+
