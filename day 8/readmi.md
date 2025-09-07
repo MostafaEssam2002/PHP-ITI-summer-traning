@@ -1,428 +1,221 @@
-# Restaurant Website
+# Restaurant Website - Day 8 Task
 
+## ITI PHP Summer Internship Project
 
+A modern, responsive restaurant website featuring an interactive hero slider, dynamic menu system, and elegant design. Built with HTML5, CSS3, and vanilla JavaScript.
 
-A modern, responsive restaurant website with dynamic menu functionality, featuring a beautiful image slider, interactive product catalog, and seamless user experience.
+## 🌟 Features
 
+### Hero Section
+- **Image Slider**: Automatic slideshow with 4 restaurant images
+- **Navigation Controls**: Arrow buttons and dot indicators
+- **Touch Support**: Swipe gestures for mobile devices
+- **Keyboard Navigation**: Arrow keys support
+- **Auto-play**: 5-second intervals with pause on hover
 
+### Dynamic Menu System
+- **Category Filtering**: Filter menu items by Pizza, Pasta, Steak, Drinks, or view All
+- **Animated Cards**: Smooth animations and hover effects
+- **Add to Cart**: Interactive cart system with counter
+- **Responsive Grid**: Adapts to different screen sizes
+- **Loading States**: User-friendly loading indicators
 
-## 🍽️ Features
+### Modern Design
+- **Responsive Layout**: Mobile-first approach
+- **Smooth Animations**: CSS transitions and keyframe animations
+- **Typography**: Custom Google Fonts (Poppins, Merriweather, Nunito)
+- **Color Scheme**: Professional dark theme with golden accents
+- **Interactive Elements**: Hover effects and micro-animations
 
+### Additional Features
+- **Scroll to Top**: Floating button for easy navigation
+- **Smooth Scrolling**: Enhanced user experience
+- **Fixed Navigation**: Sticky header with background blur
+- **Footer**: Comprehensive contact and service information
 
+## 🛠 Technologies Used
 
-### Frontend Features
-
-- **Dynamic Image Slider**: Auto-playing hero section with 4 restaurant images
-
-- **Responsive Navigation**: Fixed navbar with smooth scrolling to sections
-
-- **Interactive Menu System**: Category-based product filtering
-
-- **Shopping Cart**: Add-to-cart functionality with real-time counter
-
-- **Smooth Animations**: Fade-in effects, hover animations, and scroll-triggered animations
-
-- **Mobile Responsive**: Optimized for all device sizes
-
-- **Accessibility**: Keyboard navigation support and touch/swipe gestures
-
-
-
-### Backend Features
-
-- **MySQL Database Integration**: Dynamic product and category loading
-
-- **CORS Support**: Cross-origin resource sharing enabled
-
-
-
-## 🛠️ Tech Stack
-
-
-
-### Frontend
-
-- **HTML5**: Semantic markup structure
-
-- **CSS3**: Modern styling with animations and responsive design
-
-- **JavaScript (ES6+)**: Interactive functionality and API integration
-
-- **Google Fonts**: Poppins and Merriweather typography
-
-
-
-### Backend
-
-- **PHP**: Server-side scripting
-
-- **MySQL**: Database management
-
-- **PDO**: Database connectivity and prepared statements
-
-
+- **HTML5**: Semantic markup and structure
+- **CSS3**: Modern styling with Flexbox and Grid
+- **JavaScript (ES6+)**: Dynamic functionality and interactions
+- **Google Fonts**: Typography enhancement
+- **Responsive Design**: Mobile-friendly layout
 
 ## 📁 Project Structure
 
-
-
 ```
-
 restaurant-website/
-
-├── index.html          # Main HTML file
-
-├── style.css           # CSS styles and animations
-
-├── script.js           # JavaScript functionality
-
-├── get_products.php    # PHP API endpoint
-
-├── images/             # Image assets folder
-
+├── index.html              # Main HTML file
+├── style.css               # Stylesheet
+├── script.js               # JavaScript functionality
+├── products.json           # Menu data (JSON format)
+├── images/                 # Image assets
 │   ├── logo.png
-
 │   ├── slide_1.jpg
-
 │   ├── slide_2.jpg
-
 │   ├── slide_3.jpg
-
-│   └── res_img_5.jpg
-
-└── README.md           # This file
-
+│   ├── res_img_5.jpg
+│   ├── pizza-1.jpg
+│   ├── pizza-2.jpg
+│   ├── pizza-7.jpg
+│   ├── pizza8.jpg
+│   ├── pasta1.jpg
+│   ├── pasta2.jpg
+│   ├── pasta5.jpg
+│   ├── pasta6.jpg
+│   ├── res_img_4.jpg
+│   ├── res_img_6.jpg
+│   ├── res_img_7.jpg
+│   ├── res_img_8.jpg
+│   ├── blog-img-3.jpg
+│   ├── blog-img-4.jpg
+│   └── blog-bg.jpg
+└── README.md               # Project documentation
 ```
 
-
-
-## 🗄️ Database Schema
-
-
-
-### Tables Required
-
-
-
-#### `categories` Table
-
-```sql
-
-CREATE TABLE categories (
-
-&nbsp;   id INT AUTO_INCREMENT PRIMARY KEY,
-
-&nbsp;   name VARCHAR(100) NOT NULL
-
-);
-
-```
-
-
-
-#### `products` Table
-
-```sql
-
-CREATE TABLE products (
-
-&nbsp;   id INT AUTO_INCREMENT PRIMARY KEY,
-
-&nbsp;   name VARCHAR(200) NOT NULL,
-
-&nbsp;   price DECIMAL(10,2),
-
-&nbsp;   image VARCHAR(500),
-
-&nbsp;   category_id INT,
-
-&nbsp;   FOREIGN KEY (category_id) REFERENCES categories(id)
-
-);
-
-```
-
-
-
-### Sample Data
-
-```sql
-
--- Categories
-
-INSERT INTO categories (name) VALUES 
-
-('All'), ('Appetizers'), ('Main Courses'), ('Desserts'), ('Beverages');
-
-
-
--- Products
-
-INSERT INTO products (name, price, image, category_id) VALUES 
-
-('Caesar Salad', 12.99, 'images/caesar-salad.jpg', 2),
-
-('Grilled Chicken', 18.99, 'images/grilled-chicken.jpg', 3),
-
-('Chocolate Cake', 8.99, 'images/chocolate-cake.jpg', 4);
-
-```
-
-
-
-## 🚀 Setup Instructions
-
-
+## 🚀 Getting Started
 
 ### Prerequisites
+- Modern web browser (Chrome, Firefox, Safari, Edge)
+- Web server (optional, for local development)
 
-- Web server (Apache/Nginx)
+### Installation & Setup
 
-- PHP 7.0 or higher
+1. **Clone or Download** the project files
+2. **Ensure all files** are in the same directory structure as shown above
+3. **Add Images**: Place your restaurant images in the `images/` folder
+4. **Open** `index.html` in a web browser
 
-- MySQL 5.7 or higher
+### Local Development (Optional)
 
-- Modern web browser
+For better development experience, use a local server:
 
+```bash
+# Using Python 3
+python -m http.server 8000
 
+# Using Node.js (if you have http-server installed)
+npx http-server
 
-### Installation Steps
+# Using PHP
+php -S localhost:8000
+```
 
+Then visit `http://localhost:8000`
 
+## 📋 Menu Data Structure
 
-1. **Clone/Download the project files**
+The menu system uses `products.json` with the following structure:
 
-&nbsp;  ```bash
+```json
+{
+  "categories": ["All", "Steak", "Pasta", "Pizza", "Drinks"],
+  "products": [
+    {
+      "id": 1,
+      "name": "pizza 15$",
+      "price": 15,
+      "category": "Pizza",
+      "image": "images/pizza-1.jpg"
+    }
+  ]
+}
+```
 
-&nbsp;  git clone <repository-url>
+### Adding New Menu Items
 
-&nbsp;  cd restaurant-website
-
-&nbsp;  ```
-
-
-
-2. **Database Setup**
-
-&nbsp;  - Create a MySQL database named `test`
-
-&nbsp;  - Import the required tables (see Database Schema section)
-
-&nbsp;  - Update database credentials in `get_products.php` if needed:
-
-&nbsp;    ```php
-
-&nbsp;    $pdo = new PDO("mysql:host=localhost;dbname=test;charset=utf8", "root", "");
-
-&nbsp;    ```
-
-
-
-3. **Web Server Configuration**
-
-&nbsp;  - Place files in your web server's document root
-
-&nbsp;  - Ensure PHP has MySQL PDO extension enabled
-
-&nbsp;  - Update the API endpoint URL in `script.js` if needed:
-
-    ``` javascript
-
-    const response = await fetch('http://localhost/task6-9/get_products.php')
-
-    ```
-
-
-
-4. **Image Assets**
-
-&nbsp;  - Add restaurant images to the `images/` folder
-
-&nbsp;  - Ensure image paths in the database match actual file locations
-
-
-
-## 🔧 Configuration
-
-
-
-### API Endpoint
-
-The PHP script `get_products.php` serves as the API endpoint that:
-
-- Fetches all categories from the database
-
-- Retrieves products with their associated category names
-
-- Returns JSON response with CORS headers enabled
-
-
-
-### JavaScript Configuration
-
-Key configurable elements in `script.js`:
-
-- Auto-slide interval (currently 5 seconds)
-
-- API endpoint URL
-
-- Animation delays and durations
-
-- Touch/swipe sensitivity
-
-
+1. Edit `products.json`
+2. Add new product objects with unique IDs
+3. Ensure image files exist in the `images/` folder
+4. Add new categories to the categories array if needed
 
 ## 🎨 Customization
 
+### Colors
+Main color variables can be modified in `style.css`:
+- Primary: `#d4af37` (Gold)
+- Background: `#0f172b` (Dark Blue)
+- Accent: `#ff9500` (Orange)
+- Text: `#938464` (Muted Gold)
 
+### Fonts
+Current fonts used:
+- **Merriweather**: Body text
+- **Nunito**: Hero titles
+- **Poppins**: Navigation and buttons
 
-### Styling
+### Images
+- **Hero Slides**: 1920x1080px recommended
+- **Menu Items**: 400x300px recommended
+- **Logo**: SVG or PNG format
 
-- Primary colors: Gold (#d4af37) and Navy (#0f172b)
+## 📱 Responsive Breakpoints
 
-- Fonts: Merriweather (serif) and Nunito (sans-serif)
+- **Desktop**: 1200px+
+- **Tablet**: 768px - 1199px
+- **Mobile**: 480px - 767px
+- **Small Mobile**: Below 480px
 
-- Animations: CSS transitions and keyframe animations
+## ⚡ Performance Features
 
+- **Lazy Loading**: Images load as needed
+- **Optimized Animations**: Hardware-accelerated CSS transforms
+- **Efficient DOM**: Minimal reflows and repaints
+- **Event Delegation**: Optimized event handling
 
-
-### Content Sections
-
-- Hero slider with 4 image slots
-
-- About Us section with fade-in animation
-
-- Dynamic menu with category filtering
-
-- Footer with restaurant information
-
-
-
-## 📱 Responsive Design
-
-
-
-The website is fully responsive with breakpoints at:
-
-- Desktop: 1200px+
-
-- Tablet: 768px - 1199px
-
-- Mobile: 480px - 767px
-
-- Small Mobile: < 480px
-
-
-
-## 🔍 Browser Support
-
-
+## 🔧 Browser Support
 
 - Chrome 60+
-
 - Firefox 55+
-
 - Safari 12+
-
 - Edge 79+
+- Mobile browsers (iOS Safari, Chrome Mobile)
 
+## 📝 Key Learning Points (ITI Internship)
 
+This project demonstrates:
 
-## 🚀 Performance Features
-
-
-
-- Lazy loading for images
-
-- CSS animations with GPU acceleration
-
-- Efficient DOM manipulation
-
-- Optimized image sizes and formats
-
-
-
-## 🔒 Security Features
-
-
-
-- PDO prepared statements prevent SQL injection
-
-- CORS headers properly configured
-
-- Input validation on frontend and backend
-
-
-
-## 📊 API Response Format
-
-
-
-```json
-
-{
-
-&nbsp; "categories": ["All", "Appetizers", "Main Courses", "Desserts"],
-
-&nbsp; "products": [
-
-&nbsp;   {
-
-&nbsp;     "id": 1,
-
-&nbsp;     "name": "Caesar Salad",
-
-&nbsp;     "price": "12.99",
-
-&nbsp;     "image": "images/caesar-salad.jpg",
-
-&nbsp;     "category": "Appetizers"
-
-&nbsp;   }
-
-&nbsp; ]
-
-}
-
-```
-
-
+1. **Modern CSS**: Grid, Flexbox, animations, and responsive design
+2. **JavaScript ES6+**: Async/await, arrow functions, destructuring
+3. **DOM Manipulation**: Dynamic content creation and event handling
+4. **User Experience**: Loading states, error handling, accessibility
+5. **Code Organization**: Modular functions and clean architecture
+6. **Performance**: Optimized animations and efficient rendering
 
 ## 🐛 Troubleshooting
 
+### Images Not Loading
+- Check file paths in `products.json`
+- Ensure images exist in the `images/` folder
+- Verify image file extensions match
 
+### Menu Not Displaying
+- Check browser console for JavaScript errors
+- Ensure `products.json` is valid JSON
+- Verify web server is serving JSON files correctly
 
-### Common Issues
+### Animations Not Working
+- Check if `prefers-reduced-motion` is enabled in browser
+- Ensure CSS transitions are supported
+- Verify JavaScript is enabled
 
-1. **Products not loading**: Check database connection and API endpoint URL
+## 🚧 Future Enhancements
 
-2. **Images not displaying**: Verify image paths and file permissions
+Potential improvements for advanced learning:
 
-3. **CORS errors**: Ensure proper headers in PHP file
+- **Backend Integration**: PHP/MySQL for dynamic content
+- **User Authentication**: Login and user profiles
+- **Order System**: Complete ordering workflow
+- **Payment Integration**: Stripe or PayPal
+- **Admin Panel**: Menu management interface
+- **SEO Optimization**: Meta tags and structured data
 
-4. **Animations not working**: Check CSS animation support in browser
+## 📄 License
 
+This project is created for educational purposes as part of the ITI PHP Summer Internship program.
 
+---
 
-### Debug Mode
+**Day 8 Task Completion**: ✅ Modern Restaurant Website with Interactive Features
 
-Enable console logging by uncommenting debug statements in `script.js`
-
-
-
-## 🤝 Contributing
-
-
-
-1. Fork the repository
-
-2. Create a feature branch
-
-3. Make your changes
-
-4. Test thoroughly
-
-5. Submit a pull request
-
-
-
+*Developed during ITI PHP Summer Internship - Demonstrating HTML5, CSS3, and JavaScript proficiency*
