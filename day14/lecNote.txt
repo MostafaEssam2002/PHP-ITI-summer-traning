@@ -1,0 +1,129 @@
+larvel ========> php frame work(packags ==> files) ==>https://laravel.com/
+===  php  > not organized   
+{
+ database 
+^
+front (views)  ===========> MVC ==> design pattern (solution for problem) 
+^                  ====> Model View Controller ===>
+                         DB  ,  Front , Logic 
+logic ==> functions 
+}
+
+
+====> manager ==> packags manager ==> composer  (https://getcomposer.org/download/)
+
+
+run server ==> link url ==> browser 
+
+
+user ==> url (run) ==> routes ==> if exist or not
+exist ===> controller  ====> DB  ===========================> out that user want
+      ===> view   ===========> 
+
+not exist =======================================================> 404 not found
+
+===> create project in laravel  ==>https://laravel.com/docs/12.x  and run it 
+composer global require laravel/installer
+laravel new proj_name
+
+===> cd proj_name 
+==> php artisan serve
+
+
+2------ composer create-project laravel/laravel proj_name  ==> last version
+
+3---- install project depend on specifc version ==>composer create-project "laravel/laravel:^10.0" proj_name
+
+
+==============> package manager ==> composer 
+===========> tool run commands ==> artisan
+
+
+rout ==>url 
+controller===>(view , model) ===>  brain  ==>APP=> HTTP ==> Controller
+model (Elequant ORM ) ==> data base ==> table Name , primary key , relation ==>==>APP=>Models 
+
+view ==> Reasource ==> front ==> user
+
+
+
+=============> routes
+
+Route::method('url', (view))
+Route::method('url', (controller))
+
+
+
+===========> blade engine
+
+==> write code php without using php tag
+
+==> all php code ==> directive 
+
+@for
+@if   @endif
+
+
+for()
+{
+
+}  ==> end for
+
+
+
+========================> DB ==> handel ==> 
+design pattern ==> single tone ===>  
+
+php ===> connection 
+students ===> require(con)  ==> new obj
+courses ===> require(con) ===> new obj
+
+
+/**
+1- create database
+2- handel cradentials ===> userName , DB_Name , DB_Password
+                            host , DB_Type
+
+
+
+  ============> Migrations (يهاجر)
+  DB ==> Sql 
+  PHP ==> Model   (relation , tables Name)
+  ===> strurcture of tables (migrations) ==>
+
+  =============================>
+  1- route 
+   2- controller(logic===> all functions ) =>https://laravel.com/docs/12.x/controllers#main-content
+   php  artisan make:controller StudntController
+
+   3- model ===> php  artisan make:model Student  ==> https://laravel.com/docs/12.x/eloquent
+
+   /**
+   
+   /// handel any thing else in model
+   model ==> singular  ==> مفرد
+   table ==> plural ==> جمغ
+   /
+
+
+
+// delete
+- handle Route
+- create function controller
+- button --> form --> handel method , csrf
+
+
+// insert 
+
+/**
+form ==> select data from user  ===> view 
+==> data ==> strore data base   ===> function 
+
+====> 
+ routes --> 1 (show form)
+ route ---> 2 (inseert selected data)
+
+
+ // update data  (form)
+ 1-display old data
+ 2-update 
